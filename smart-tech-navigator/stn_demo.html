@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Tech Navigator — Demo</title>
+<style>
+  :root{
+    --navy-deep:#0f1526;
+    --navy-panel:#1a2340;
+    --navy-panel-2:#212c4f;
+    --gold:#c9a04e;
+    --gold-soft:#e3c584;
+    --ink:#eef1f8;
+    --ink-muted:#8b93ad;
+    --line:#2c3660;
+    --error:#d97757;
+  }
+  *{box-sizing:border-box;}
+  html,body{height:100%;}
+  body{
+    margin:0;
+    background:
+      radial-gradient(circle at 15% 0%, rgba(201,160,78,0.08), transparent 45%),
+      var(--navy-deep);
+    color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    min-height:100vh;
+    padding:32px 16px;
+  }
+
+  .shell{
+    width:100%;
+    max-width:760px;
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+
+  /* ---------- Header ---------- */
+  .header{
+    display:flex;
+    align-items:center;
+    gap:16px;
+  }
+  .mark{
+    flex:0 0 auto;
+    width:46px;
+    height:46px;
+  }
+  .mark svg{
+    width:100%;
+    height:100%;
+    animation:settle 1.4s cubic-bezier(.2,.8,.2,1) 1;
+    transform-origin:50% 50%;
+  }
+  @keyframes settle{
+    0%{ transform:rotate(-35deg) scale(.9); opacity:0; }
+    100%{ transform:rotate(0deg) scale(1); opacity:1; }
+  }
+  .title-block h1{
+    font-family:Georgia,"Iowan Old Style","Times New Roman",serif;
+    font-size:26px;
+    font-weight:600;
+    margin:0;
+    letter-spacing:0.2px;
+  }
+  .title-block p{
+    margin:2px 0 0;
+    font-size:13px;
+    color:var(--ink-muted);
+  }
+
+  /* ---------- Pipeline strip ---------- */
+  .pipeline{
+    display:flex;
+    gap:8px;
+    background:var(--navy-panel);
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:12px 14px;
+  }
+  .step{
+    flex:1;
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    padding:0 8px;
+  }
+  .step + .step{ border-left:1px solid var(--line); }
+  .step-num{
+    font-family:Georgia,serif;
+    font-size:13px;
+    color:var(--gold);
+    font-weight:600;
+    flex:0 0 auto;
+  }
+  .step-label{
+    font-size:12px;
+    color:var(--ink-muted);
+    line-height:1.4;
+  }
+  .step-label b{ color:var(--ink); font-weight:600; }
+
+  /* ---------- Chat panel ---------- */
+  .panel{
+    background:var(--navy-panel);
+    border:1px solid var(--line);
+    border-radius:16px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+    height:60vh;
+    min-height:420px;
+  }
+  .panel-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:10px 16px;
+    border-bottom:1px solid var(--line);
+    font-size:12px;
+    color:var(--ink-muted);
+  }
+  .status-dot{
+    display:inline-block;
+    width:7px;height:7px;
+    border-radius:50%;
+    background:var(--gold);
+    margin-right:6px;
+    box-shadow:0 0 0 3px rgba(201,160,78,0.15);
+  }
+  .bar-actions button{
+    background:none;
+    border:1px solid var(--line);
+    color:var(--ink-muted);
+    font-size:11px;
+    padding:5px 10px;
+    border-radius:7px;
+    cursor:pointer;
+  }
+  .bar-actions button:hover{ color:var(--ink); border-color:var(--gold); }
+
+  .messages{
+    flex:1;
+    overflow-y:auto;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+  .msg{ max-width:82%; display:flex; flex-direction:column; gap:4px; }
+  .msg.user{ align-self:flex-end; align-items:flex-end; }
+  .msg.agent{ align-self:flex-start; align-items:flex-start; }
+  .bubble{
+    padding:11px 14px;
+    border-radius:14px;
+    font-size:14.5px;
+    line-height:1.5;
+    white-space:pre-wrap;
+  }
+  .msg.user .bubble{
+    background:var(--gold);
+    color:#231a08;
+    border-bottom-right-radius:4px;
+  }
+  .msg.agent .bubble{
+    background:var(--navy-panel-2);
+    border:1px solid var(--line);
+    border-bottom-left-radius:4px;
+  }
+  .msg.system .bubble{
+    background:transparent;
+    border:1px dashed var(--error);
+    color:var(--error);
+    font-size:13px;
+  }
+  .who{ font-size:11px; color:var(--ink-muted); padding:0 4px; }
+
+  .typing{ display:flex; gap:4px; padding:4px 2px; }
+  .typing span{
+    width:6px;height:6px;border-radius:50%;
+    background:var(--ink-muted);
+    animation:bounce 1.2s infinite ease-in-out;
+  }
+  .typing span:nth-child(2){ animation-delay:.15s; }
+  .typing span:nth-child(3){ animation-delay:.3s; }
+  @keyframes bounce{ 0%,80%,100%{ transform:translateY(0); opacity:.4;} 40%{ transform:translateY(-4px); opacity:1; } }
+
+  /* ---------- Input row ---------- */
+  .input-row{
+    display:flex;
+    gap:10px;
+    padding:14px;
+    border-top:1px solid var(--line);
+  }
+  .input-row textarea{
+    flex:1;
+    resize:none;
+    background:var(--navy-deep);
+    border:1px solid var(--line);
+    color:var(--ink);
+    border-radius:10px;
+    padding:11px 13px;
+    font-size:14.5px;
+    font-family:inherit;
+    line-height:1.4;
+    height:44px;
+  }
+  .input-row textarea:focus{
+    outline:none;
+    border-color:var(--gold);
+  }
+  .input-row button{
+    background:var(--gold);
+    color:#231a08;
+    border:none;
+    border-radius:10px;
+    padding:0 20px;
+    font-size:14px;
+    font-weight:600;
+    cursor:pointer;
+  }
+  .input-row button:disabled{
+    background:var(--navy-panel-2);
+    color:var(--ink-muted);
+    cursor:not-allowed;
+  }
+
+  .footer-note{
+    font-size:11.5px;
+    color:var(--ink-muted);
+    text-align:center;
+  }
+  .footer-note code{
+    background:var(--navy-panel);
+    padding:1px 5px;
+    border-radius:4px;
+    color:var(--gold-soft);
+  }
+
+  #debugBox{
+    display:none;
+    max-height:180px;
+    overflow:auto;
+    background:var(--navy-deep);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:10px;
+    font-size:11px;
+    color:var(--ink-muted);
+    white-space:pre-wrap;
+  }
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+  <div class="header">
+    <div class="mark">
+      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="21" stroke="#c9a04e" stroke-width="2"/>
+        <path d="M24 10 L28 24 L24 38 L20 24 Z" fill="#c9a04e"/>
+        <circle cx="24" cy="24" r="3" fill="#0f1526" stroke="#c9a04e" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="title-block">
+      <h1>Smart Tech Navigator</h1>
+      <p>Vendor evaluation & recommendation — live agent demo</p>
+    </div>
+  </div>
+
+  <div class="pipeline">
+    <div class="step">
+      <span class="step-num">01</span>
+      <span class="step-label"><b>Extract</b> requirements from what you tell it</span>
+    </div>
+    <div class="step">
+      <span class="step-num">02</span>
+      <span class="step-label"><b>Score</b> vendors against a weighted scorecard</span>
+    </div>
+    <div class="step">
+      <span class="step-num">03</span>
+      <span class="step-label"><b>Recommend</b> the best-fit option, with reasoning</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-bar">
+      <div><span class="status-dot"></span><span id="statusText">Not connected yet</span></div>
+      <div class="bar-actions">
+        <button id="debugToggle" type="button">Show raw response</button>
+        <button id="resetBtn" type="button">New conversation</button>
+      </div>
+    </div>
+    <div class="messages" id="messages">
+      <div class="msg agent">
+        <span class="who">STN</span>
+        <div class="bubble">Hi! Tell me what you're trying to solve — team size, budget, must-have features — and I'll extract your requirements and recommend a vendor.</div>
+      </div>
+    </div>
+    <div class="input-row">
+      <textarea id="input" placeholder="e.g. We're a 20-person startup, need a CRM under $50/user/month, needs SOC 2 compliance..."></textarea>
+      <button id="sendBtn" type="button">Send</button>
+    </div>
+  </div>
+
+  <pre id="debugBox"></pre>
+
+  <p class="footer-note">
+    Connects to <code>adk api_server</code> running locally. Keep that terminal window open in the background during the demo.
+  </p>
+
+</div>
+
+<script>
+  // =====================================================================
+  // EDIT THESE THREE LINES BEFORE USING
+  // =====================================================================
+  const CONFIG = {
+    API_BASE: "http://localhost:8000",   // matches the address adk api_server prints on startup
+    APP_NAME: "smart-tech-navigator",  // <-- the exact folder name of your agent (the one adk web/adk run points to)
+    USER_ID: "demo_user"                 // any label you like, used to group the conversation
+  };
+  // =====================================================================
+
+  let sessionId = crypto.randomUUID();
+  let sessionReady = false;
+
+  const messagesEl = document.getElementById("messages");
+  const inputEl = document.getElementById("input");
+  const sendBtn = document.getElementById("sendBtn");
+  const statusText = document.getElementById("statusText");
+  const debugBox = document.getElementById("debugBox");
+  const debugToggle = document.getElementById("debugToggle");
+  const resetBtn = document.getElementById("resetBtn");
+
+  function addMessage(role, text) {
+    const wrap = document.createElement("div");
+    wrap.className = "msg " + role;
+    const who = document.createElement("span");
+    who.className = "who";
+    who.textContent = role === "user" ? "You" : role === "system" ? "Notice" : "STN";
+    const bubble = document.createElement("div");
+    bubble.className = "bubble";
+    bubble.textContent = text;
+    wrap.appendChild(who);
+    wrap.appendChild(bubble);
+    messagesEl.appendChild(wrap);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return wrap;
+  }
+
+  function addTyping() {
+    const wrap = document.createElement("div");
+    wrap.className = "msg agent";
+    wrap.id = "typingIndicator";
+    wrap.innerHTML = '<div class="bubble"><div class="typing"><span></span><span></span><span></span></div></div>';
+    messagesEl.appendChild(wrap);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+  function removeTyping() {
+    const t = document.getElementById("typingIndicator");
+    if (t) t.remove();
+  }
+
+  async function ensureSession() {
+    if (sessionReady) return;
+    const url = `${CONFIG.API_BASE}/apps/${CONFIG.APP_NAME}/users/${CONFIG.USER_ID}/sessions/${sessionId}`;
+    const res = await fetch(url, { method: "POST", headers: { "Content-Type": "application/json" } });
+    if (!res.ok) throw new Error(`Could not create a session (status ${res.status}). Check that APP_NAME matches your agent's folder name.`);
+    sessionReady = true;
+    statusText.textContent = "Connected";
+  }
+
+  function extractAgentText(events) {
+    if (!Array.isArray(events)) return null;
+    const parts = [];
+    for (const ev of events) {
+      const content = ev.content;
+      if (!content || !Array.isArray(content.parts)) continue;
+      if (content.role === "user") continue;
+      for (const p of content.parts) {
+        if (p.text) parts.push(p.text);
+      }
+    }
+    return parts.length ? parts.join("\n") : null;
+  }
+
+  async function sendMessage() {
+    const text = inputEl.value.trim();
+    if (!text) return;
+    inputEl.value = "";
+    sendBtn.disabled = true;
+    addMessage("user", text);
+    addTyping();
+
+    try {
+      await ensureSession();
+      const res = await fetch(`${CONFIG.API_BASE}/run`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          appName: CONFIG.APP_NAME,
+          userId: CONFIG.USER_ID,
+          sessionId: sessionId,
+          newMessage: { role: "user", parts: [{ text }] }
+        })
+      });
+
+      const raw = await res.text();
+      debugBox.textContent = raw;
+
+      if (!res.ok) throw new Error(`Server responded with status ${res.status}. See raw response for details.`);
+
+      const data = JSON.parse(raw);
+      const reply = extractAgentText(data);
+      removeTyping();
+      addMessage("agent", reply || "(No text reply found — click 'Show raw response' to see what came back.)");
+    } catch (err) {
+      removeTyping();
+      addMessage("system", "Couldn't reach the agent: " + err.message + "\n\nCheck that 'adk api_server' is still running in your terminal, and that APP_NAME in this page matches your agent folder.");
+      statusText.textContent = "Connection issue";
+    } finally {
+      sendBtn.disabled = false;
+      inputEl.focus();
+    }
+  }
+
+  sendBtn.addEventListener("click", sendMessage);
+  inputEl.addEventListener("keydown", (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      e.preventDefault();
+      sendMessage();
+    }
+  });
+  debugToggle.addEventListener("click", () => {
+    debugBox.style.display = debugBox.style.display === "block" ? "none" : "block";
+  });
+  resetBtn.addEventListener("click", () => {
+    sessionId = crypto.randomUUID();
+    sessionReady = false;
+    statusText.textContent = "Not connected yet";
+    messagesEl.innerHTML = "";
+    addMessage("agent", "New conversation started. What are you trying to solve?");
+  });
+</script>
+</body>
+</html>

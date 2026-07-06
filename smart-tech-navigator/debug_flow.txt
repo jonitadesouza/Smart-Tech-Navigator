@@ -1,0 +1,737 @@
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="""We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today."""
+)] role='user'
+state raw_message: parts=[Part(
+  text="""We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today."""
+)] role='user'
+state clarification_history: []
+full_context passed to LLM:
+Initial message: parts=[Part(
+  text="""We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today."""
+)] role='user'
+
+requirements_extractor output: {'company_profile': {'size': 'mid-market', 'industry': 'fintech', 'region': 'India', 'budget_inr': 4200000.0}, 'problem_summary': 'Struggling with manual onboarding in spreadsheets and legacy Zoho CRM, requiring an automated, RBI-compliant KYC platform with document verification, video KYC, and core banking integration.', 'required_modules': ['document verification', 'video KYC', 'API integration with core banking'], 'nice_to_have': ['multilingual support for regional languages'], 'must_avoid': ['vendors storing data outside India'], 'current_stack': ['spreadsheets', 'Zoho'], 'timeline_weeks': 12, 'decision_criteria': {'cost_weight': 10, 'feature_weight': 4, 'implementation_weight': 6, 'support_weight': 10, 'scalability_weight': 4}, 'clarification_needed': ['Which core banking partner requires API integration?', 'Are there specific regional languages that are highly preferred for the multilingual support?', 'Are there specific security certifications (e.g., ISO, SOC2) required beyond local data hosting?']}
+
+--- CLARIFICATION ASKER (Before yield) ---
+node_input: Which core banking partner requires API integration?
+Are there specific regional languages that are highly preferred for the multilingual support?
+Are there specific security certifications (e.g., ISO, SOC2) required beyond local data hosting?
+
+--- CLARIFICATION ASKER (After yield) ---
+resume_inputs: {}
+extracted answer: 
+new state clarification_history: []
+
+--- INTAKE NODE ---
+node_input: 
+state raw_message: parts=[Part(
+  text="""We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today."""
+)] role='user'
+state clarification_history: []
+full_context passed to LLM:
+Initial message: parts=[Part(
+  text="""We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today."""
+)] role='user'
+
+requirements_extractor output: {'company_profile': {'size': 'mid-market', 'industry': 'fintech', 'region': 'India', 'budget_inr': 4200000.0}, 'problem_summary': 'Legacy Zoho CRM and spreadsheets are causing disorganized customer onboarding; need an automated KYC and onboarding platform with core banking API integration.', 'required_modules': ['document verification', 'video KYC', 'API integration'], 'nice_to_have': ['multilingual support'], 'must_avoid': ['vendors storing data outside India', 'non-RBI compliant vendors'], 'current_stack': ['Spreadsheets', 'Zoho CRM'], 'timeline_weeks': 12, 'decision_criteria': {'cost_weight': 10, 'feature_weight': 4, 'implementation_weight': 6, 'support_weight': 10, 'scalability_weight': 3}, 'clarification_needed': ['Identify the specific core banking partner for API integration.', 'Specify which regional languages are required for the nice-to-have multilingual support.']}
+
+--- CLARIFICATION ASKER (Before yield) ---
+node_input: Identify the specific core banking partner for API integration.
+Specify which regional languages are required for the nice-to-have multilingual support.
+
+--- CLARIFICATION ASKER (After yield) ---
+resume_inputs: {}
+extracted answer: 
+new state clarification_history: []
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text='specific core banking partner for API integration- SBI bank and regional languages are required for the nice-to-have multilingual support- Marathi and Konkani'
+)] role='user'
+state raw_message: parts=[Part(
+  text="""We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today."""
+)] role='user'
+state clarification_history: []
+full_context passed to LLM:
+Initial message: parts=[Part(
+  text="""We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today."""
+)] role='user'
+
+requirements_extractor output: {'company_profile': {'size': 'mid-market', 'industry': 'fintech', 'region': 'India', 'budget_inr': 4200000.0}, 'problem_summary': 'Inconsistent and manual onboarding processes using spreadsheets and legacy Zoho CRM, requiring automated KYC, document verification, and core banking integration.', 'required_modules': ['document verification', 'video KYC', 'API integration with core banking partner'], 'nice_to_have': ['multilingual support for regional languages'], 'must_avoid': ['vendors storing data outside India'], 'current_stack': ['spreadsheets', 'Zoho'], 'timeline_weeks': 12, 'decision_criteria': {'cost_weight': 10, 'feature_weight': 4, 'implementation_weight': 8, 'support_weight': 9, 'scalability_weight': 4}, 'clarification_needed': ['Identify the specific core banking partner/system requiring API integration.', 'Determine the exact regional languages required for the nice-to-have multilingual support.']}
+
+--- CLARIFICATION ASKER (Before yield) ---
+node_input: Identify the specific core banking partner/system requiring API integration.
+Determine the exact regional languages required for the nice-to-have multilingual support.
+
+--- CLARIFICATION ASKER (After yield) ---
+resume_inputs: {}
+extracted answer: 
+new state clarification_history: []
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="""We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today."""
+)] role='user'
+extracted input_str: We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today.
+state raw_message: We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today.
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today.
+
+requirements_extractor output: {'company_profile': {'size': 'mid-market', 'industry': 'Fintech', 'region': 'Bangalore, India', 'budget_inr': 4200000.0}, 'problem_summary': 'Legacy Zoho CRM and spreadsheets are creating manual bottlenecks in customer onboarding; requires a robust KYC and onboarding automation platform with document verification, video KYC, and core banking API integration.', 'required_modules': ['document verification', 'video KYC', 'API integration'], 'nice_to_have': ['multilingual support'], 'must_avoid': ['vendors storing data outside India'], 'current_stack': ['spreadsheets', 'Zoho CRM'], 'timeline_weeks': 12, 'decision_criteria': {'cost_weight': 10, 'feature_weight': 4, 'implementation_weight': 8, 'support_weight': 10, 'scalability_weight': 4}, 'clarification_needed': ['Which specific core banking partner is currently in use for the API integration?', 'Which regional languages are preferred for the nice-to-have multilingual support?']}
+
+--- CLARIFICATION ASKER (Before yield) ---
+node_input: Which specific core banking partner is currently in use for the API integration?
+Which regional languages are preferred for the nice-to-have multilingual support?
+
+--- INTAKE NODE ---
+node_input: SBI bank and Languages - marathi, hindi , konkani
+extracted input_str: SBI bank and Languages - marathi, hindi , konkani
+state raw_message: We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today.
+state clarification_history: ['SBI bank and Languages - marathi, hindi , konkani']
+full_context passed to LLM:
+Initial message: We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today.
+Clarification response 1: SBI bank and Languages - marathi, hindi , konkani
+
+requirements_extractor output: {'company_profile': {'size': 'mid-market', 'industry': 'Fintech', 'region': 'India', 'budget_inr': 4200000.0}, 'problem_summary': 'Inconsistent spreadsheet and legacy Zoho CRM onboarding processes require replacement with an automated KYC system including document verification, video KYC, and SBI core banking integration.', 'required_modules': ['document verification', 'video KYC', 'SBI core banking integration'], 'nice_to_have': ['multilingual support', 'marathi support', 'hindi support', 'konkani support'], 'must_avoid': ['vendors storing data outside India', 'non-RBI compliant hosting'], 'current_stack': ['spreadsheets', 'Zoho'], 'timeline_weeks': 12, 'decision_criteria': {'cost_weight': 10, 'feature_weight': 5, 'implementation_weight': 7, 'support_weight': 10, 'scalability_weight': 4}, 'clarification_needed': []}
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today"
+)] role='user'
+extracted input_str: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today
+state raw_message: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today
+
+requirements_extractor output: {'company_profile': {'size': 'mid-market', 'industry': 'fintech', 'region': 'Bangalore, India', 'budget_inr': 4200000.0}, 'problem_summary': 'Inconsistent and messy customer onboarding using spreadsheets and Zoho CRM. Needs a proper KYC and onboarding automation system integrated with their core banking partner.', 'required_modules': ['document verification', 'video KYC', 'API integration with core banking partner'], 'nice_to_have': ['multilingual support for regional languages'], 'must_avoid': ['vendors storing data outside India'], 'current_stack': ['spreadsheets', 'Zoho'], 'timeline_weeks': 12, 'decision_criteria': {'cost_weight': 10, 'feature_weight': 4, 'implementation_weight': 7, 'support_weight': 9, 'scalability_weight': 4}, 'clarification_needed': ['Name of the specific core banking partner to be integrated.', 'Which regional languages are preferred for the multilingual support.']}
+
+--- CLARIFICATION ASKER (Before yield) ---
+node_input: Name of the specific core banking partner to be integrated.
+Which regional languages are preferred for the multilingual support.
+
+--- INTAKE NODE ---
+node_input: SBI bank and languages -marathi,hindi 
+extracted input_str: SBI bank and languages -marathi,hindi
+state raw_message: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today
+state clarification_history: ['SBI bank and languages -marathi,hindi']
+full_context passed to LLM:
+Initial message: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today
+Clarification response 1: SBI bank and languages -marathi,hindi
+
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today"
+)] role='user'
+extracted input_str: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today
+state raw_message: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today
+
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="""We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today."""
+)] role='user'
+extracted input_str: We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today.
+state raw_message: We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today.
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today.
+
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="""We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today."""
+)] role='user'
+extracted input_str: We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today.
+state raw_message: We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today.
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We're a mid-market fintech startup based in Bangalore, India. We're
+currently using spreadsheets and a legacy CRM (Zoho) to track customer
+onboarding, and it's become a mess — we need a system to help us choose
+a proper KYC and onboarding automation platform. We need document
+verification, video KYC, and API integration with our core banking
+partner. It would be nice to have multilingual support for regional
+languages, but that's not essential. We must avoid any vendor that
+stores data outside India due to RBI compliance. Our budget is around
+$50,000 USD, and we're hoping to go live within 12 weeks. Cost matters
+a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since
+we're only 200 employees today.
+
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="""We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us."""
+)] role='user'
+extracted input_str: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+state raw_message: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="""We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us."""
+)] role='user'
+extracted input_str: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+state raw_message: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text='We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us.'
+)] role='user'
+extracted input_str: We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us.
+state raw_message: We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us.
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us.
+
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="""We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us."""
+)] role='user'
+extracted input_str: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+state raw_message: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+
+requirements_extractor output: {'company_profile': {'size': 'enterprise', 'industry': 'manufacturing industry', 'region': 'Pune, India', 'budget_inr': 30000000.0}, 'problem_summary': 'Need a logistics system for an enterprise-size manufacturing company to optimize routes, track fleets, and manage warehouses, integrating with current SAP and Oracle NetSuite.', 'required_modules': ['route optimization', 'fleet tracking', 'warehouse management'], 'nice_to_have': ['AI-based demand forecasting'], 'must_avoid': ['on-premise-only deployment'], 'current_stack': ['SAP', 'Oracle NetSuite'], 'timeline_weeks': 20, 'decision_criteria': {'cost_weight': 8, 'feature_weight': 6, 'implementation_weight': 5, 'support_weight': 5, 'scalability_weight': 6}, 'clarification_needed': []}
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="""We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us."""
+)] role='user'
+extracted input_str: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+state raw_message: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+
+requirements_extractor output: {'company_profile': {'size': 'enterprise', 'industry': 'manufacturing', 'region': 'India', 'budget_inr': 30000000.0}, 'problem_summary': 'Enterprise logistics company requires a system for route optimization, fleet tracking, and warehouse management. AI-based demand forecasting is a nice-to-have. Must avoid on-premise-only deployments. Budget is INR 3 Crore, with a 20-week timeline.', 'required_modules': ['route optimization', 'fleet tracking', 'warehouse management'], 'nice_to_have': ['AI-based demand forecasting'], 'must_avoid': ['on-premise-only deployment'], 'current_stack': ['SAP', 'Oracle NetSuite'], 'timeline_weeks': 20, 'decision_criteria': {'cost_weight': 8, 'feature_weight': 6, 'implementation_weight': 5, 'support_weight': 5, 'scalability_weight': 6}, 'clarification_needed': []}
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="""We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us."""
+)] role='user'
+extracted input_str: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+state raw_message: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We need a system for our company. We are an enterprise-size logistics
+company in the manufacturing industry, based in Pune, India. Our
+current stack is SAP and Oracle NetSuite. We are looking for software
+that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting,
+but that is not required. We must avoid any vendor that requires
+on-premise-only deployment. Our budget is exactly INR 3,00,00,000.
+Our timeline is 20 weeks. For decision criteria, weight cost at 8,
+features at 6, implementation at 5, support at 5, and scalability
+at 6. That covers everything — there is nothing else you need to
+ask us.
+
+requirements_extractor output: {'company_profile': {'size': 'enterprise', 'industry': 'manufacturing', 'region': 'Pune, India', 'budget_inr': 30000000.0}, 'problem_summary': 'Enterprise logistics company needs software for route optimization, fleet tracking, and warehouse management to integrate with existing SAP and NetSuite, avoiding on-premise solutions within a 20-week timeline and a 3 crore budget.', 'required_modules': ['route optimization', 'fleet tracking', 'warehouse management'], 'nice_to_have': ['AI-based demand forecasting'], 'must_avoid': ['on-premise-only deployment'], 'current_stack': ['SAP', 'Oracle NetSuite'], 'timeline_weeks': 20, 'decision_criteria': {'cost_weight': 8, 'feature_weight': 6, 'implementation_weight': 5, 'support_weight': 5, 'scalability_weight': 6}, 'clarification_needed': []}
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text=""".We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us
+"""
+)] role='user'
+extracted input_str: .We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us
+state raw_message: .We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us
+state clarification_history: []
+full_context passed to LLM:
+Initial message: .We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us
+
+requirements_extractor output: {'company_profile': {'size': 'enterprise', 'industry': 'logistics', 'region': 'India', 'budget_inr': 30000000.0}, 'problem_summary': 'Our enterprise logistics company lacks essential capabilities in route optimization, fleet tracking, and warehouse management, leading to operational inefficiencies. We require a new system to enhance these core logistics functions.', 'required_modules': ['route optimization', 'fleet tracking', 'warehouse management'], 'nice_to_have': ['AI-based demand forecasting'], 'must_avoid': ['on-premise-only deployment'], 'current_stack': ['SAP', 'Oracle NetSuite'], 'timeline_weeks': 20, 'decision_criteria': {'cost_weight': 8, 'feature_weight': 6, 'implementation_weight': 5, 'support_weight': 5, 'scalability_weight': 6}, 'clarification_needed': []}
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="""We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since we're only 200 employees today.
+"""
+)] role='user'
+extracted input_str: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since we're only 200 employees today.
+state raw_message: .We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us
+state clarification_history: ["We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is\ncritical too — feature completeness and scalability matter less since we're only 200 employees today."]
+full_context passed to LLM:
+Initial message: .We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us
+Clarification response 1: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance. Our budget is around $50,000 USD, and we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is
+critical too — feature completeness and scalability matter less since we're only 200 employees today.
+
+requirements_extractor output: {'company_profile': {'size': 'mid-market', 'industry': 'fintech', 'region': 'Bangalore, India', 'budget_inr': 4200000.0}, 'problem_summary': 'We are struggling with messy customer onboarding due to spreadsheets and a legacy CRM. We need a proper KYC and onboarding automation platform to streamline our processes and enhance efficiency.', 'required_modules': ['document verification', 'video KYC', 'API integration with our core banking partner'], 'nice_to_have': ['multilingual support for regional languages'], 'must_avoid': ['any vendor that stores data outside India'], 'current_stack': ['spreadsheets', 'Zoho'], 'timeline_weeks': 12, 'decision_criteria': {'cost_weight': 10, 'feature_weight': 3, 'implementation_weight': 5, 'support_weight': 9, 'scalability_weight': 3}, 'clarification_needed': []}
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text='i want a database'
+)] role='user'
+extracted input_str: i want a database
+state raw_message: .We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us
+state clarification_history: ['i want a database']
+full_context passed to LLM:
+Initial message: .We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us
+Clarification response 1: i want a database
+
+requirements_extractor output: {'company_profile': {'size': 'enterprise', 'industry': 'Logistics', 'region': 'India', 'budget_inr': 30000000.0}, 'problem_summary': 'The enterprise logistics company needs a comprehensive software solution to enhance operations, including route optimization, fleet tracking, and warehouse management, integrating with existing SAP and Oracle NetSuite systems.', 'required_modules': ['route optimization', 'fleet tracking', 'warehouse management'], 'nice_to_have': ['AI-based demand forecasting'], 'must_avoid': ['on-premise-only deployment'], 'current_stack': ['SAP', 'Oracle NetSuite'], 'timeline_weeks': 20, 'decision_criteria': {'cost_weight': 8, 'feature_weight': 6, 'implementation_weight': 5, 'support_weight': 5, 'scalability_weight': 6}, 'clarification_needed': []}
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance.we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today."
+)] role='user'
+extracted input_str: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance.we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today.
+state raw_message: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance.we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today.
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We're a mid-market fintech startup based in Bangalore, India. We're currently using spreadsheets and a legacy CRM (Zoho) to track customer onboarding, and it's become a mess — we need a system to help us choose a proper KYC and onboarding automation platform. We need document verification, video KYC, and API integration with our core banking partner. It would be nice to have multilingual support for regional languages, but that's not essential. We must avoid any vendor that stores data outside India due to RBI compliance.we're hoping to go live within 12 weeks. Cost matters a lot to us since we're bootstrapped, and post-launch support is critical too — feature completeness and scalability matter less since we're only 200 employees today.
+
+requirements_extractor output: {'company_profile': {'size': 'mid-market', 'industry': 'fintech', 'region': 'Bangalore, India', 'budget_inr': None}, 'problem_summary': 'Current customer onboarding with spreadsheets and legacy CRM (Zoho) is inefficient. We need a system to choose a proper KYC and onboarding automation platform for improved efficiency.', 'required_modules': ['document verification', 'video KYC', 'API integration with core banking partner'], 'nice_to_have': ['multilingual support for regional languages'], 'must_avoid': ['any vendor that stores data outside India'], 'current_stack': ['spreadsheets', 'Zoho CRM'], 'timeline_weeks': 12, 'decision_criteria': {'cost_weight': 9, 'feature_weight': 3, 'implementation_weight': 3, 'support_weight': 8, 'scalability_weight': 3}, 'clarification_needed': []}
+
+--- INTAKE NODE ---
+node_input: parts=[Part(
+  text="""We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us.
+"""
+)] role='user'
+extracted input_str: We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us.
+state raw_message: We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us.
+state clarification_history: []
+full_context passed to LLM:
+Initial message: We need a system for our company. We are an enterprise-size logistics company in the manufacturing industry, based in Pune, India. Our current stack is SAP and Oracle NetSuite. We are looking for software that includes route optimization, fleet tracking, and warehouse
+management. It would be nice to have AI-based demand forecasting, but that is not required. We must avoid any vendor that requires on-premise-only deployment. Our budget is exactly INR 3,00,00,000. Our timeline is 20 weeks. For decision criteria, weight cost at 8, features at 6, implementation at 5, support at 5, and scalability at 6. That covers everything — there is nothing else you need to ask us.
+
+requirements_extractor output: {'company_profile': {'size': 'enterprise', 'industry': 'logistics', 'region': 'India', 'budget_inr': 30000000.0}, 'problem_summary': 'Enterprise logistics company needs a system for efficient route optimization, fleet tracking, and warehouse management to streamline operations and improve supply chain efficiency.', 'required_modules': ['route optimization', 'fleet tracking', 'warehouse management'], 'nice_to_have': ['AI-based demand forecasting'], 'must_avoid': ['on-premise-only deployment'], 'current_stack': ['SAP', 'Oracle NetSuite'], 'timeline_weeks': 20, 'decision_criteria': {'cost_weight': 8, 'feature_weight': 6, 'implementation_weight': 5, 'support_weight': 5, 'scalability_weight': 6}, 'clarification_needed': []}
