@@ -1,4 +1,4 @@
-# Smart Tech Navigator (STN)
+# Smart Technology Navigator (STN)
 
 **An AI agent that matches software solutions to business requirements — for buyers evaluating vendors, and for vendors proving fit.**
 
