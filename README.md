@@ -92,8 +92,8 @@ Takes the structured requirements and, using live web research, evaluates candid
 - **Google ADK 2.0** — Workflow API (graph-based orchestration: nodes, edges, `RequestInput`)
 - **Antigravity IDE** — development environment
 - **agents-cli** — used to scaffold the initial agent structure
-- **Serper / Tavily** — web search APIs for live vendor/solution research
-- **Google Cloud Platform (free tier)** — hosting and API infrastructure
+- **Serper** — web search APIs for live vendor/solution research
+- **Google Cloud Platform** — API infrastructure
 
 ---
 
